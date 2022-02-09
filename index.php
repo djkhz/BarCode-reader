@@ -56,13 +56,31 @@ function addAllColumnHeaders(arr, table) {
 }
 var detialContainer = document.getElementById('qr-reader-details');
 var decodedText= '8850124034519';
-axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
-    .then( response => {
+// axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
+//     .then( response => {
       
-      detialContainer.innerHTML="asdasd";
-        console.log(response.data);
+//       detialContainer.innerHTML="asdasd";
+//         console.log(response.data);
         
-    });
+//     });
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=" + decodedText, true);
+xhr.onload = function (e) {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      // console.log(xhr.responseText);
+      var response = JSON.parse(xhr.responseText);
+      detialContainer.appendChild(buildHtmlTable(response.data));
+      // console.log("Temperature(K): " + response.main.temp);
+    } else {
+      console.error(xhr.statusText);
+    }
+  }
+};
+xhr.onerror = function (e) {
+  console.error(xhr.statusText);
+};
+xhr.send(null);
 ///////////////////////////////////
 
     function docReady(fn) {
