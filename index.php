@@ -68,10 +68,10 @@ xhr.open("GET", "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=" + decodedTe
 xhr.onload = function (e) {
   if (xhr.readyState === 4) {
     if (xhr.status === 200) {
-      // console.log(xhr.responseText);
+      console.log(xhr.responseText);
       var response = JSON.parse(xhr.responseText);
-      detialContainer.appendChild(buildHtmlTable(response.data));
-      // console.log("Temperature(K): " + response.main.temp);
+      // detialContainer.appendChild(buildHtmlTable(response.data));
+      console.log("Temperature(K): " + response.main.temp);
     } else {
       console.error(xhr.statusText);
     }
