@@ -10,7 +10,7 @@
     <div id="qr-reader-details"></div>
 </body>
 <script src="/html5-qrcode.min.js"></script>
-<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script type="text/javascript" 
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
