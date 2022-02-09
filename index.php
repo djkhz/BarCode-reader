@@ -54,7 +54,7 @@ $(document).ready(function () {
 // });
 $.ajax({
   type: 'GET',
-        url: "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919".
+        url: "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919",
         async: true,
         cache: true,
         crossDomain: false,
