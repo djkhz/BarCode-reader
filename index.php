@@ -53,8 +53,8 @@ $(document).ready(function () {
 //     dataType:"xml",
 // });
 $.ajax({
-                url: "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919",
-                method: "post",
+                url: "//sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919",
+                method: "get",
                 success: function(data) {
                     alert(data);
                 }
