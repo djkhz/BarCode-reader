@@ -232,14 +232,14 @@ function addAllColumnHeaders(arr, table) {
 //     { id: 2, name: "Kubernetes Patterns", price: 28.99 },
 //     { id: 3, name: "Clean Code", price: 30.99 },
 // ];
-var array =response.data[0];
-transpose(array);
+// var array =response.data[0];
 // transpose(array);
-                var newarry = "[ [ " + array[0] + " ] ], [ [ "
-                        + array[1] + " ] ], [ [ " + array[2] + " ] ]";
+// // transpose(array);
+//                 var newarry = "[ [ " + array[0] + " ] ], [ [ "
+//                         + array[1] + " ] ], [ [ " + array[2] + " ] ]";
                    
 // console.log(transposed);
-      detialContainer.appendChild(buildHtmlTable(transposed.data));
+      detialContainer.appendChild(buildHtmlTable(response.data));
     //   $("table").each(function() {
     //     var $this = $(this);
     //     var newrows = [];
