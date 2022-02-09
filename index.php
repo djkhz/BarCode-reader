@@ -54,15 +54,15 @@ function addAllColumnHeaders(arr, table) {
   table.appendChild(tr);
   return columnSet;
 }
-var detialContainer = document.getElementById('qr-reader-details');
-var decodedText= '8850124034519';
-axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
-    .then( response => {
+// var detialContainer = document.getElementById('qr-reader-details');
+// var decodedText= '8850124034519';
+// axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
+//     .then( response => {
       
-      detialContainer.appendChild(buildHtmlTable(response.data));
-        console.log(response.data);
+//       detialContainer.appendChild(buildHtmlTable(response.data));
+//         console.log(response.data);
         
-    });
+//     });
 ///////////////////////////////////
 
     function docReady(fn) {
@@ -90,6 +90,14 @@ axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
                 console.log(`Scan result ${decodedText}`, decodedResult);
             }
             resultContainer.innerHTML = decodedText;
+            axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
+    .then( response => {
+      
+      detialContainer.appendChild(buildHtmlTable(response.data));
+        // console.log(response.data);
+        
+    });
+////////
     
         }
         
