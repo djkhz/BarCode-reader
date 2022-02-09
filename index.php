@@ -54,8 +54,7 @@ $(document).ready(function () {
 // });
 $.ajax({
                 url: "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919",
-                method: "get",
-                data: { },
+                method: "post",
                 success: function(data) {
                     alert(data);
                 }
