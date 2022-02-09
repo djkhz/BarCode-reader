@@ -43,7 +43,7 @@
 //   console.error(xhr.statusText);
 // };
 // xhr.send(null);
-$(document).ready(function () {
+// $(document).ready(function () {
 			
 //   $.ajax({
 //     type: "GET",
@@ -148,7 +148,7 @@ function addAllColumnHeaders(arr, table) {
         html5QrcodeScanner.render(onScanSuccess);
     });
     
-  });
+  // });
 </script>
 </head>
 </html>
