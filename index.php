@@ -70,7 +70,7 @@ table th {
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script> -->
 <script>
-  function oTreeAll(values) {
+  function transpose(oTreeAll) {
 
 var keys = [];
 var i = 0;
