@@ -10,7 +10,10 @@
     <div id="qr-reader-details"></div>
 </body>
 <script src="/html5-qrcode.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script> -->
+<script type="text/javascript" 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
 <script>
 //////////////////////////////
 // var detialContainer = document.getElementById('qr-reader-details');
@@ -40,7 +43,13 @@
 //   console.error(xhr.statusText);
 // };
 // xhr.send(null);
-
+$(document).ready(function () {
+			
+  $.get("https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+    
+ 
 var _table_ = document.createElement('table'),
   _tr_ = document.createElement('tr'),
   _th_ = document.createElement('th'),
@@ -124,6 +133,8 @@ function addAllColumnHeaders(arr, table) {
             "qr-reader", { fps: 10, qrbox: 250 });
         html5QrcodeScanner.render(onScanSuccess);
     });
+    
+  });
 </script>
 </head>
 </html>
