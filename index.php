@@ -133,7 +133,7 @@ function addAllColumnHeaders(arr, table) {
                 console.log(`Scan result ${decodedText}`, decodedResult);
             }
             resultContainer.innerHTML = decodedText;
-      axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
+      axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ລະຫັດ=' + decodedText)
           .then( response => {
             detialContainer.innerHTML =""
       detialContainer.appendChild(buildHtmlTable(response.data));
