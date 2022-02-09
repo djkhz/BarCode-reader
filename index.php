@@ -46,8 +46,8 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: caption; 
-}
- */
+} */
+
 /* Visual styling */
 table { border-collapse: collapse; }
 table td {
