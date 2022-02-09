@@ -92,14 +92,12 @@ function addAllColumnHeaders(arr, table) {
             resultContainer.innerHTML = decodedText;
       axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
           .then( response => {
-            alert('test');
       
       detialContainer.appendChild(buildHtmlTable(response.data));
         // console.log(response.data);
         
     });
-    alert('test2');
-      
+    
         }
         
         var html5QrcodeScanner = new Html5QrcodeScanner(
