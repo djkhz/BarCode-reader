@@ -38,7 +38,7 @@
     // .then( response => {
     //     console.log(response.data);
     // });
-    function myFunction() {
+    function myScan() {
       var resultElement = document.getElementById('code')
     setupLiveReader(resultElement)
     }
