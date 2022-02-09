@@ -22,7 +22,7 @@
 
   <script>
        // Get all data
-       axios.get('https://sheetdb.io/api/v1/58f61be4dda40')
+       axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1')
     .then( response => {
         console.log(response.data);
     });
