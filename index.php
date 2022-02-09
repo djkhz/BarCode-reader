@@ -233,7 +233,7 @@ function addAllColumnHeaders(arr, table) {
 //     { id: 3, name: "Clean Code", price: 30.99 },
 // ];
 var array =response.data;
-const transposed = transpose(array);
+transpose(array);
 // transpose(array);
                 var newarry = "[ [ " + array[0] + " ] ], [ [ "
                         + array[1] + " ] ], [ [ " + array[2] + " ] ]";
