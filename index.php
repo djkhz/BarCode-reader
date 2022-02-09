@@ -11,9 +11,9 @@
 </body>
 <script src="/html5-qrcode.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-<script type="text/javascript" 
+<!-- <script type="text/javascript" 
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-    </script>
+    </script> -->
 <script>
 //////////////////////////////
 // var detialContainer = document.getElementById('qr-reader-details');
@@ -136,7 +136,7 @@ function addAllColumnHeaders(arr, table) {
       axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
           .then( response => {
       
-      detialContainer.appendChild(buildHtmlTable(response.data));
+      detialContainer.innerHTML(buildHtmlTable(response.data));
         // console.log(response.data);
         
     });
