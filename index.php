@@ -57,7 +57,7 @@ $.ajax({
                 method: "get",
                 dataType: "json",
                 success: function(data) {
-                    // alert(data);
+                     alert(data);
                     var resultContainer = document.getElementById('qr-reader-results');
         var detialContainer = document.getElementById('qr-reader-details');
 
