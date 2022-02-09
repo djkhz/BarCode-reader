@@ -10,7 +10,7 @@
     <div id="qr-reader-details"></div>
 </body>
 <script src="/html5-qrcode.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script> -->
 <script type="text/javascript" 
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
@@ -57,7 +57,11 @@ $.ajax({
                 method: "get",
                 dataType: "json",
                 success: function(data) {
-                    alert(data);
+                    // alert(data);
+                    var resultContainer = document.getElementById('qr-reader-results');
+        var detialContainer = document.getElementById('qr-reader-details');
+
+        detialContainer.appendChild(buildHtmlTable(response.data));
                 }
             });
   // $.get("https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919", function(data, status){
@@ -127,6 +131,7 @@ function addAllColumnHeaders(arr, table) {
     docReady(function () {
         var resultContainer = document.getElementById('qr-reader-results');
         var detialContainer = document.getElementById('qr-reader-details');
+        
         var lastResult, countResults = 0;
         
 
