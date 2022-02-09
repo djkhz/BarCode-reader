@@ -47,7 +47,7 @@
   -ms-grid-column-span: 2;
   grid-area: caption; 
 }
-
+ */
 /* Visual styling */
 table { border-collapse: collapse; }
 table td {
@@ -57,7 +57,7 @@ table th {
   border: 1px solid black;
   background-color: grey;
   color: white;
-} */
+}
 </style>
 <body>
     <div id="qr-reader" style="width:500px"></div>
@@ -222,7 +222,7 @@ function addAllColumnHeaders(arr, table) {
 //     { id: 2, name: "Kubernetes Patterns", price: 28.99 },
 //     { id: 3, name: "Clean Code", price: 30.99 },
 // ];
-const transposed = transpose(response.da);
+const transposed = transpose(response.data);
 // console.log(transposed);
       detialContainer.appendChild(buildHtmlTable(transposed));
     //   $("table").each(function() {
