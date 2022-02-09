@@ -6,7 +6,7 @@
     <title>Html-Qrcode Demo</title>
 
 <style>
-.vertical {
+/* .vertical {
   display: -ms-grid;
   -ms-grid-rows: auto auto;
   -ms-grid-columns: auto auto;
@@ -28,7 +28,7 @@
 .vertical tbody {
     grid-area: body;
     display: flex;
-  -ms-grid-row: 5;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
 }
 .vertical tr {
@@ -57,7 +57,7 @@ table th {
   border: 1px solid black;
   background-color: grey;
   color: white;
-}
+} */
 </style>
 <body>
     <div id="qr-reader" style="width:500px"></div>
@@ -70,6 +70,29 @@ table th {
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script> -->
 <script>
+  function transpose(values) {
+    if (!Array.isArray(values))
+        throw new Error("`values` must be an array");
+
+    if (values.length === 0)
+        return {};
+
+    const keys = Object.keys(values[0]);
+    const transposed = {
+        data: {},
+        count: values.length,
+    };
+
+    keys.forEach(key => {
+        transposed.data[key] = [];
+
+        values.forEach(value => {
+            transposed.data[key].push(value[key]);
+        });
+    });
+
+    return transposed;
+}
 //////////////////////////////
 // var detialContainer = document.getElementById('qr-reader-details');
 // var decodedText= '8850124034519';
@@ -192,7 +215,16 @@ function addAllColumnHeaders(arr, table) {
       axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ລະຫັດ=' + decodedText)
           .then( response => {
             detialContainer.innerHTML =""
-      detialContainer.appendChild(buildHtmlTable(response.data));
+            
+
+// const products = [
+//     { id: 1, name: "Building Microservices", price: 39.49 },
+//     { id: 2, name: "Kubernetes Patterns", price: 28.99 },
+//     { id: 3, name: "Clean Code", price: 30.99 },
+// ];
+const transposed = transpose(response.da);
+// console.log(transposed);
+      detialContainer.appendChild(buildHtmlTable(transposed));
     //   $("table").each(function() {
     //     var $this = $(this);
     //     var newrows = [];
