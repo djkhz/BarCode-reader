@@ -47,8 +47,8 @@ $(document).ready(function () {
 			
   $.get("https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919", function(data, status){
       
-      var response = JSON.parse(data);
-      console.log(response);
+      // var response = JSON.parse(data);
+      console.log(data);
     });
 
  
