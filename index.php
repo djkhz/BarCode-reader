@@ -57,7 +57,7 @@ $.ajax({
         url: "http://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919",
         async: true,
         cache: true,
-        crossDomain: false,
+        crossDomain: true,
         contentType: "application/json; charset=utf-8",
         dataType: 'json',
         error: function (jqXHR, err) {
