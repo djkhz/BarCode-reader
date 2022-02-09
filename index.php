@@ -135,8 +135,8 @@ function addAllColumnHeaders(arr, table) {
             resultContainer.innerHTML = decodedText;
       axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
           .then( response => {
-            detialContainer.innerHTML = "";
-      detialContainer.outerHTML =buildHtmlTable(response.data).outerHTML;
+            detialContainer.innerHTML =""
+      detialContainer.appendChild(buildHtmlTable(response.data));
         // console.log(response.data);
         
     });
