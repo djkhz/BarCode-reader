@@ -53,10 +53,18 @@ $(document).ready(function () {
 //     dataType:"xml",
 // });
 $.ajax({
-                url: "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919",
-                type: 'GET',
-                dataType: "json",
-                success: function(data) {
+  type: 'GET',
+        url: "https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919".
+        async: true,
+        cache: true,
+        crossDomain: false,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        error: function (jqXHR, err) {
+            console.log(jqXHR.responseText);
+            alert("Error" + jqXHR.responseText);
+        },
+         success: function(data) {
                      alert(data);
                     var resultContainer = document.getElementById('qr-reader-results');
         var detialContainer = document.getElementById('qr-reader-details');
