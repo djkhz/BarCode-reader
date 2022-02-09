@@ -6,9 +6,58 @@
     <title>Html-Qrcode Demo</title>
 
 <style>
+.vertical {
+  display: -ms-grid;
+  -ms-grid-rows: auto auto;
+  -ms-grid-columns: auto auto;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "caption caption"
+    "head body";
+}
+.vertical thead {
+  grid-area: head;
+  display: flex;
+  flex-shrink: 0;
+  min-width: min-content;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+.vertical tbody {
+    grid-area: body;
+    display: flex;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+}
+.vertical tr {
+  display: flex;
+  flex-direction: column;
+  min-width: min-content;
+  flex-shrink: 0;
+}
+.vertical td, .vertical th {
+  display: block;
+}
+.vertical caption {
+  display: block;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: caption; 
+}
+
+/* Visual styling */
 table { border-collapse: collapse; }
-tr { display: block; float: left; }
-th, td { display: block; border: 1px solid black; }
+table td {
+  border: 1px solid black; 
+}
+table th {
+  border: 1px solid black;
+  background-color: grey;
+  color: white;
+}
 </style>
 <body>
     <div id="qr-reader" style="width:500px"></div>
@@ -73,6 +122,7 @@ var _table_ = document.createElement('table'),
   _tr_ = document.createElement('tr'),
   _th_ = document.createElement('th'),
   _td_ = document.createElement('td');
+  _table_.className = "vertical";
 
 // Builds the HTML Table out of myList json data from Ivy restful service.
 function buildHtmlTable(arr) {
