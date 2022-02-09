@@ -70,8 +70,8 @@ xhr.onload = function (e) {
     if (xhr.status === 200) {
       console.log(xhr.responseText);
       var response = JSON.parse(xhr.responseText);
-      // detialContainer.appendChild(buildHtmlTable(response.data));
-      console.log("Temperature(K): " + response.main.temp);
+      detialContainer.appendChild(buildHtmlTable(response));
+      // console.log("Temperature(K): " + response.main.temp);
     } else {
       console.error(xhr.statusText);
     }
