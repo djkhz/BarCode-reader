@@ -4,6 +4,12 @@
 <html>
 <head>
     <title>Html-Qrcode Demo</title>
+
+<style>
+table { border-collapse: collapse; }
+tr { display: block; float: left; }
+th, td { display: block; border: 1px solid black; }
+</style>
 <body>
     <div id="qr-reader" style="width:500px"></div>
     <div id="qr-reader-results"></div>
@@ -11,9 +17,9 @@
 </body>
 <script src="/html5-qrcode.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-<script type="text/javascript" 
+<!-- <script type="text/javascript" 
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-    </script>
+    </script> -->
 <script>
 //////////////////////////////
 // var detialContainer = document.getElementById('qr-reader-details');
@@ -137,22 +143,22 @@ function addAllColumnHeaders(arr, table) {
           .then( response => {
             detialContainer.innerHTML =""
       detialContainer.appendChild(buildHtmlTable(response.data));
-      $("table").each(function() {
-        var $this = $(this);
-        var newrows = [];
-        $this.find("tr").each(function(){
-            var i = 0;
-            $(this).find("td").each(function(){
-                i++;
-                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
-                newrows[i].append($(this));
-            });
-        });
-        $this.find("tr").remove();
-        $.each(newrows, function(){
-            $this.append(this);
-        });
-    });
+    //   $("table").each(function() {
+    //     var $this = $(this);
+    //     var newrows = [];
+    //     $this.find("tr").each(function(){
+    //         var i = 0;
+    //         $(this).find("td").each(function(){
+    //             i++;
+    //             if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+    //             newrows[i].append($(this));
+    //         });
+    //     });
+    //     $this.find("tr").remove();
+    //     $.each(newrows, function(){
+    //         $this.append(this);
+    //     });
+    // });
         // console.log(response.data);
         
     });
