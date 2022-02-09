@@ -13,7 +13,7 @@
 
 <body>
   <p id="code">code will appear here</p>
-
+  <button onclick="myScan()">Start Scan</button>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="exif.min.js"></script>
   <script src="BarcodeScanner.min.js"></script>
@@ -38,9 +38,10 @@
     // .then( response => {
     //     console.log(response.data);
     // });
-
-    var resultElement = document.getElementById('code')
+    function myFunction() {
+      var resultElement = document.getElementById('code')
     setupLiveReader(resultElement)
+    }
   </script>
 </body>
 
