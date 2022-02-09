@@ -135,7 +135,7 @@ function addAllColumnHeaders(arr, table) {
             resultContainer.innerHTML = decodedText;
       axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
           .then( response => {
-            detialContainer.outerHTML = "";
+            detialContainer.innerHTML = "";
       detialContainer.outerHTML =buildHtmlTable(response.data).outerHTML;
         // console.log(response.data);
         
