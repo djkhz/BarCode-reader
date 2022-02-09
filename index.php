@@ -224,7 +224,7 @@ function addAllColumnHeaders(arr, table) {
 // ];
 const transposed = transpose(response.data);
 // console.log(transposed);
-      detialContainer.appendChild(buildHtmlTable(transposed));
+      detialContainer.appendChild(buildHtmlTable(transposed.data));
     //   $("table").each(function() {
     //     var $this = $(this);
     //     var newrows = [];
