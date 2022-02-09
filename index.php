@@ -70,39 +70,39 @@ table th {
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script> -->
 <script>
-  function transpose(oTreeAll) {
+  function transpose(mat) {
+                for (var i = 0; i < mat.length; i++) {
+                    for (var j = 0; j < i; j++) {
+                        const tmp = mat[i][j];
+                        mat[i][j] = mat[j][i];
+                        mat[j][i] = tmp;
+                    }
+                }
+            }
+            
+//   function transpose(values) {
+//     if (!Array.isArray(values))
+//         throw new Error("`values` must be an array");
 
-var keys = [];
-var i = 0;
-for ( var key in oTreeAll[i]) {
-    keys.push(key);
-}
+//     if (values.length === 0)
+//         return {};
 
-console.log(keys);
+//     const keys = Object.keys(values[0]);
+//     const transposed = {
+//         data: {},
+//         count: values.length,
+//     };
 
-var newObj = {
-    d : []
-};
+//     keys.forEach(key => {
+//         transposed.data[key] = [];
 
-newObj['length'] = oTreeAll.length;
-for (var k = 0; k < oTreeAll.length; k++) {
-    var obj = {};
-    for ( var cnt in keys) {
-        obj[keys[cnt]] = "";
-    }
-    newObj.d.push(obj);
-}
+//         values.forEach(value => {
+//             transposed.data[key].push(value[key]);
+//         });
+//     });
 
-for (var k = 0; k < oTreeAll.length; k++) {
-    for (var j = 0; j < oTreeAll.length; j++) {
-        newObj.d[k][keys[j]] = oTreeAll[j][keys[k]];
-    }
-}
-
-console.log(newObj);
-        return newObj;
-
-}
+//     return transposed;
+// }
 //////////////////////////////
 // var detialContainer = document.getElementById('qr-reader-details');
 // var decodedText= '8850124034519';
@@ -232,7 +232,12 @@ function addAllColumnHeaders(arr, table) {
 //     { id: 2, name: "Kubernetes Patterns", price: 28.99 },
 //     { id: 3, name: "Clean Code", price: 30.99 },
 // ];
-const transposed = transpose(response.data);
+var array =response.data;
+const transposed = transpose(array);
+// transpose(array);
+                var newarry = "[ [ " + array[0] + " ] ], [ [ "
+                        + array[1] + " ] ], [ [ " + array[2] + " ] ]";
+            }        
 // console.log(transposed);
       detialContainer.appendChild(buildHtmlTable(transposed.data));
     //   $("table").each(function() {
