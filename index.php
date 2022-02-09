@@ -28,7 +28,7 @@
 .vertical tbody {
     grid-area: body;
     display: flex;
-  -ms-grid-row: 2;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
 }
 .vertical tr {
