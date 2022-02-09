@@ -7,7 +7,7 @@
 <body>
     <div id="qr-reader" style="width:500px"></div>
     <div id="qr-reader-results"></div>
-    <div id="qr-reader-detail"></div>
+    <div id="qr-reader-details"></div>
 </body>
 <script src="/html5-qrcode.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
@@ -54,7 +54,7 @@ function addAllColumnHeaders(arr, table) {
   table.appendChild(tr);
   return columnSet;
 }
-var detialContainer = document.getElementById('qr-reader-detial');
+var detialContainer = document.getElementById('qr-reader-details');
 var decodedText= '8850124034519';
 axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
     .then( response => {
@@ -77,7 +77,7 @@ axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
 
     docReady(function () {
         var resultContainer = document.getElementById('qr-reader-results');
-        var detialContainer = document.getElementById('qr-reader-detial');
+        var detialContainer = document.getElementById('qr-reader-details');
         var lastResult, countResults = 0;
         
 
