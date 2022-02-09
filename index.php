@@ -12,21 +12,6 @@
 <script src="/html5-qrcode.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
-    function docReady(fn) {
-        // see if DOM is already available
-        if (document.readyState === "complete" || document.readyState === "interactive") {
-            // call on next available tick
-            setTimeout(fn, 1);
-        } else {
-            document.addEventListener("DOMContentLoaded", fn);
-        }
-    }
-
-    docReady(function () {
-        var resultContainer = document.getElementById('qr-reader-results');
-        var detialContainer = document.getElementById('qr-reader-detial');
-        var lastResult, countResults = 0;
-        
 //////////////////////////////
 var _table_ = document.createElement('table'),
   _tr_ = document.createElement('tr'),
@@ -69,8 +54,30 @@ function addAllColumnHeaders(arr, table) {
   table.appendChild(tr);
   return columnSet;
 }
-
+axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
+    .then( response => {
+      
+      detialContainer.appendChild(buildHtmlTable(response.data));
+        console.log(response.data);
+        
+    });
 ///////////////////////////////////
+
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    docReady(function () {
+        var resultContainer = document.getElementById('qr-reader-results');
+        var detialContainer = document.getElementById('qr-reader-detial');
+        var lastResult, countResults = 0;
+        
 
         
         function onScanSuccess(decodedText, decodedResult) {
@@ -81,13 +88,7 @@ function addAllColumnHeaders(arr, table) {
                 console.log(`Scan result ${decodedText}`, decodedResult);
             }
             resultContainer.innerHTML = decodedText;
-               axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
-    .then( response => {
-      
-      detialContainer.appendChild(buildHtmlTable(response.data));
-        console.log(response.data);
-        
-    });
+    
         }
         
         var html5QrcodeScanner = new Html5QrcodeScanner(
