@@ -70,28 +70,38 @@ table th {
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script> -->
 <script>
-  function transpose(values) {
-    if (!Array.isArray(values))
-        throw new Error("`values` must be an array");
+  function oTreeAll(values) {
 
-    if (values.length === 0)
-        return {};
+var keys = [];
+var i = 0;
+for ( var key in oTreeAll[i]) {
+    keys.push(key);
+}
 
-    const keys = Object.keys(values[0]);
-    const transposed = {
-        data: {},
-        count: values.length,
-    };
+console.log(keys);
 
-    keys.forEach(key => {
-        transposed.data[key] = [];
+var newObj = {
+    d : []
+};
 
-        values.forEach(value => {
-            transposed.data[key].push(value[key]);
-        });
-    });
+newObj['length'] = oTreeAll.length;
+for (var k = 0; k < oTreeAll.length; k++) {
+    var obj = {};
+    for ( var cnt in keys) {
+        obj[keys[cnt]] = "";
+    }
+    newObj.d.push(obj);
+}
 
-    return transposed;
+for (var k = 0; k < oTreeAll.length; k++) {
+    for (var j = 0; j < oTreeAll.length; j++) {
+        newObj.d[k][keys[j]] = oTreeAll[j][keys[k]];
+    }
+}
+
+console.log(newObj);
+        return newObj;
+
 }
 //////////////////////////////
 // var detialContainer = document.getElementById('qr-reader-details');
