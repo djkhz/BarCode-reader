@@ -61,7 +61,7 @@ $.ajax({
                     var resultContainer = document.getElementById('qr-reader-results');
         var detialContainer = document.getElementById('qr-reader-details');
 
-        detialContainer.appendChild(buildHtmlTable(response.data));
+        detialContainer.appendChild(buildHtmlTable(data));
                 }
             });
   // $.get("https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919", function(data, status){
