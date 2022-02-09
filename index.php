@@ -45,10 +45,8 @@
 // xhr.send(null);
 $(document).ready(function () {
 			
-  $.get("https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=8992304033919", function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
-    });
-    
+
+
  
 var _table_ = document.createElement('table'),
   _tr_ = document.createElement('tr'),
@@ -119,13 +117,16 @@ function addAllColumnHeaders(arr, table) {
                 console.log(`Scan result ${decodedText}`, decodedResult);
             }
             resultContainer.innerHTML = decodedText;
-      axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
-          .then( response => {
-      
-      detialContainer.appendChild(buildHtmlTable(response.data));
-        // console.log(response.data);
-        
+            $.get("https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=" + decodedText, function(data, status){
+      alert("Data: " + data.data + "\nStatus: " + status);
     });
+    //   axios.get('https://sheetdb.io/api/v1/qqfue73y5hqk1/search?ID=' + decodedText)
+    //       .then( response => {
+      
+    //   detialContainer.appendChild(buildHtmlTable(response.data));
+    //     // console.log(response.data);
+        
+    // });
     
         }
         
